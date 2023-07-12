@@ -2,9 +2,12 @@ package com.sparta.gunwooklv4.dto;
 
 import com.sparta.gunwooklv4.entity.Comment;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Getter
+@NoArgsConstructor
 public class CommentResponseDto {
     private Long id;
     private String username;

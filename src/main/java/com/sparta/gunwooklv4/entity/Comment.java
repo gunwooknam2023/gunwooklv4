@@ -1,5 +1,7 @@
 package com.sparta.gunwooklv4.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sparta.gunwooklv4.dto.CommentRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,24 +16,22 @@ public class Comment extends Timestamped{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "username", nullable = false)
-    private String username;
-
-    @Column(name = "comment", nullable = false)
+    @Column(nullable = false)
     private String comment;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonManagedReference
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "post_id", nullable = false)
+    @JsonIgnore
     private Post post;
 
     public Comment(CommentRequestDto commentRequestDto, Post post, User user){
         this.user = user;
         this.post = post;
-        this.username = user.getUsername();
         this.comment = commentRequestDto.getComment();
     }
 
