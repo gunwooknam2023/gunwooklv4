@@ -15,7 +15,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 public class PostController {
-    private PostSerivce postSerivce;
+
+    private final PostSerivce postSerivce;
 
     // 게시글 전체 조회 API
     @GetMapping("/posts")

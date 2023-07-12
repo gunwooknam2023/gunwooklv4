@@ -30,7 +30,7 @@ public class UserService {
     // 회원가입 API
     public StatusResult signup(SignupRequestDto signupRequestDto) {
         String username = signupRequestDto.getUsername();
-        String password = signupRequestDto.getPassword();
+        String password = passwordEncoder.encode(signupRequestDto.getPassword());
 
         // 회원 중복 확인
         Optional<User> check = userRepository.findByUsername(username);
