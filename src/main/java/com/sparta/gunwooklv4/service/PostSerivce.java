@@ -9,7 +9,6 @@ import com.sparta.gunwooklv4.entity.UserRoleEnum;
 import com.sparta.gunwooklv4.jwt.JwtUtil;
 import com.sparta.gunwooklv4.repository.PostRepository;
 import com.sparta.gunwooklv4.repository.UserRepository;
-import com.sparta.gunwooklv4.security.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
