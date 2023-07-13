@@ -38,7 +38,7 @@ public class LikeService {
              return new StatusResult("이미 해당 게시글에 좋아요를 누르셨습니다.", 400);
         } else {
             likeRepository.save(new Like(user, post));
-            post.increseLikeCount();
+            post.increseLikeCount(); //
             return new StatusResult("해당 게시글을 좋아합니다.", 200);
         }
 
