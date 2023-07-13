@@ -1,6 +1,5 @@
 package com.sparta.gunwooklv4.service;
 
-import com.sparta.gunwooklv4.dto.LikeResponseDto;
 import com.sparta.gunwooklv4.dto.StatusResult;
 import com.sparta.gunwooklv4.entity.Comment;
 import com.sparta.gunwooklv4.entity.Like;
@@ -46,6 +45,7 @@ public class LikeService {
     }
 
     // 게시글 좋아요 취소 API
+    @Transactional
     public StatusResult deleteLikePost(Long id, User user) {
         Post post = postRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("좋아요를 취소할 게시글이 존재하지 않습니다.")
@@ -84,6 +84,7 @@ public class LikeService {
 
 
     // 댓글 좋아요 취소 API
+    @Transactional
     public StatusResult deleteLikeComment(Long id, User user) {
         Comment comment = commentRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("좋아요를 취소할 댓글이 존재하지 않습니다.")

@@ -42,10 +42,6 @@ public class Like {
 
     public void setPost(Post post) {
         this.post = post;
-
-        // 현재 Like 객체가 Post객체의 리스트에 포함되어 있는지 체크
-        // 포함되어 있지 않다면 Post 객체의 리스트에 현재 Like 객체 추가
-
     }
 
     public void setComment(Comment comment){

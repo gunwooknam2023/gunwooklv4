@@ -1,6 +1,5 @@
 package com.sparta.gunwooklv4.controller;
 
-import com.sparta.gunwooklv4.dto.LikeResponseDto;
 import com.sparta.gunwooklv4.dto.StatusResult;
 import com.sparta.gunwooklv4.security.UserDetailsImpl;
 import com.sparta.gunwooklv4.service.LikeService;
